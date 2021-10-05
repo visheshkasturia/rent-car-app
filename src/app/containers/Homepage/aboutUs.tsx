@@ -85,7 +85,7 @@ export function AboutUs() {
         <img src={JeepImg} />
       </CarContainer>
       <InfoContainer>
-        <Title>Feel The Best Experience With Our Rental Deals</Title>
+        <Title>Get The Best Experience With Our Rental Deals</Title>
         <InfoText>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
