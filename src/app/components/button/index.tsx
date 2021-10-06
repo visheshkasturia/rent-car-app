@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import tw from "twin.macro"
-
+import tw from "twin.macro";
 
 interface IButtonProps {
-    theme ?: "filled" | "outlined";
-    text: string;
+  theme?: "filled" | "outlined";
+  text: string;
+  className?: string;
 }
 
 const BaseButton = styled.button`
-    ${tw`
+  ${tw`
         pl-5
         pr-5
         pt-3
@@ -29,11 +29,10 @@ const BaseButton = styled.button`
         ease-in-out
         m-1
     `};
-
 `;
 
 const OutlinedButton = styled(BaseButton)`
-    ${tw`
+  ${tw`
         bg-red-500
         hover:bg-transparent
         hover:text-red-500
@@ -42,7 +41,7 @@ const OutlinedButton = styled(BaseButton)`
 `;
 
 const FilledButton = styled(BaseButton)`
-    ${tw`
+  ${tw`
         border-red-500
         text-red-500
         bg-transparent
@@ -50,18 +49,12 @@ const FilledButton = styled(BaseButton)`
         hover:text-white
         hover:border-transparent
     `};
-
-
 `;
 
-
 export function Button(props: IButtonProps) {
-    const { theme, text } = props;
+  const { theme, text, className } = props;
 
-    
-    if(theme==="filled")
-        return <FilledButton>{ text }</FilledButton>
-    else
-        return <OutlinedButton> { text }</OutlinedButton>
-} 
-
+  if (theme === "filled")
+    return <FilledButton className={className}>{text}</FilledButton>;
+  else return <OutlinedButton className={className}> {text}</OutlinedButton>;
+}
