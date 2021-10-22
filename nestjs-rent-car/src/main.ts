@@ -7,6 +7,8 @@ async function bootstrap() {
   app.useGlobalFilters(new BaseExceptionFilter());
   app.useGlobalPipes(new ValidationPipe());
 
+  app.enableCors();
+
   await app.listen(process.env.PORT || 9000);
 }
 bootstrap();
